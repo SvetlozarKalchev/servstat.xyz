@@ -1,5 +1,5 @@
 {
-  "name": "servstat.xyz",
+  "name": "servstat",
   "version": "0.0.1",
   "description": "Server monitoring tool that can be interfaced with a web dashboard.",
   "main": "app.js",
