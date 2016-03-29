@@ -1,0 +1,24 @@
+{
+  "name": "servstat.xyz",
+  "version": "0.0.1",
+  "description": "Server monitoring tool that can be interfaced with a web dashboard.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SvetlozarKalchev/servstat.xyz.git"
+  },
+  "keywords": [
+    "server",
+    "monitoring",
+    "servstat"
+  ],
+  "author": "Svetlozar Kalchev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SvetlozarKalchev/servstat.xyz/issues"
+  },
+  "homepage": "https://github.com/SvetlozarKalchev/servstat.xyz#readme"
+}
