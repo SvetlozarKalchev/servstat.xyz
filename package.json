@@ -2,7 +2,7 @@
   "name": "servstat",
   "version": "0.0.1",
   "description": "Server monitoring tool that can be interfaced with a web dashboard.",
-  "main": "app.js",
+  "main": "node app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
