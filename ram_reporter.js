@@ -1,13 +1,16 @@
 'use strict';
 const os = require('os');
 
+/*
+  This module is responsible for getting total system memory and
+  calculating the free amount.
+*/
 class RamReporter {
 
   convertToGB(data) {
     return new Promise(function(resolve, reject) {
 
       if (data) {
-
         const formattedData = (data / Math.pow(10, 9)).toFixed(2);
         resolve(formattedData);
 
@@ -26,7 +29,6 @@ class RamReporter {
       const totalMemory = os.totalmem();
 
       if (totalMemory) {
-
         self.convertToGB(totalMemory)
           .then(result => resolve(result))
           .catch(err => reject(err));
