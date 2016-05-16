@@ -58,7 +58,7 @@ class RamReporter {
     });
   }
 
-  getUsedRam(callback) {
+  getUsedRam() {
     const self = this;
 
     return new Promise(function(resolve, reject) {
@@ -72,7 +72,6 @@ class RamReporter {
         })
         .then(result => {
           freeRam = result;
-          console.log(freeRam);
           usedRam = totalRam - freeRam;
 
           resolve(usedRam);
@@ -81,3 +80,5 @@ class RamReporter {
     });
   }
 }
+
+module.exports = new RamReporter();

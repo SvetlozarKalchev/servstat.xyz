@@ -1,6 +1,11 @@
 #! /usr/bin/env node
 'use strict';
 
+const util = require('util');
+
+const RamReporter = require('./src/ram_reporter.js'),
+  CpuReporter = require('./src/cpu_reporter.js');
+
 /*
   servstat start/stop/ping [options]
   - options[0] must be the command
@@ -23,12 +28,28 @@ const isCommandValid = command === 'start'
                     || command === 'ping';
 
 
-const areArgsValid = isCommandValid;
+const argsAreValid = isCommandValid;
 
-if (areArgsValid) {
+if (argsAreValid) {
   switch (command.toLowerCase()) {
     case 'start': {
       console.log('Starting...');
+      setInterval(function() {
+
+        CpuReporter.readFrequency()
+        .then(frequencies => {
+          for (let line of frequencies) {
+            console.log(line);
+          }
+        });
+
+        RamReporter.getFreeRam()
+        .then(freeRam => {
+          console.log(freeRam);
+        });
+
+      }, 3000)
+
       break;
       }
     case 'ping': {
